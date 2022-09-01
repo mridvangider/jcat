@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.io.*;
 
 public class Program {
@@ -17,7 +19,7 @@ public class Program {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String @NotNull [] args) throws Exception {
         String readMode = args[0];
         String fileName = args[1];
         
