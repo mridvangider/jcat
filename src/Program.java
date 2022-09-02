@@ -4,18 +4,20 @@ import java.io.*;
 
 public class Program {
     public static void readFileInputStream(String fileName) throws Exception {
-        BufferedInputStream bis = new BufferedInputStream(new FileInputStream(fileName));
-        int i;
-        while((i = bis.read()) != -1) {
-            System.out.print((char)i);
+        try(BufferedInputStream bis = new BufferedInputStream(new FileInputStream(fileName))) {
+            int i;
+            while ((i = bis.read()) != -1) {
+                System.out.print((char) i);
+            }
         }
     }
 
     public static void readFileReader(String fileName) throws Exception {
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        String line;
-        while((line = br.readLine()) != null) {
-            System.out.print(line+"\n");
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.print(line + "\n");
+            }
         }
     }
 
